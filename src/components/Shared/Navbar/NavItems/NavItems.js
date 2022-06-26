@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 
-const NavItems = () => {
+const NavItems = ({ user, logout }) => {
 
     return (
         <Box sx={{ flexGrow: 1, justifyContent: 'end', alignItems: 'center', display: { xs: 'none', md: 'flex' } }}>
@@ -41,18 +41,26 @@ const NavItems = () => {
                 </NavLink>
             </Box>
 
-            {/* My Account Section */}
-            <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
-                <NavLink to='/my-account' style={{ textDecoration: 'none', color: 'black' }}>
-                    My Account
-                </NavLink>
-            </Box>
-
             {/* Admin Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     Admin
                 </NavLink>
+            </Box>
+
+            {/* My Account Section */}
+            <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
+                {
+                    user.email ? (
+                        <NavLink to='' onClick={logout} style={{ textDecoration: 'none', color: 'black' }}>
+                            Logout
+                        </NavLink>
+                    ) : (
+                        <NavLink to='/my-account' style={{ textDecoration: 'none', color: 'black' }}>
+                            My Account
+                        </NavLink>
+                    )
+                }
             </Box>
         </Box>
     );

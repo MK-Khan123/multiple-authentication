@@ -7,7 +7,6 @@ import {
     updateProfile,
     sendPasswordResetEmail,
     GoogleAuthProvider,
-    GithubAuthProvider,
     onAuthStateChanged
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -20,7 +19,6 @@ initializeAuthentication();
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
-    const [error, setError] = useState('');
 
     const auth = getAuth();
 
@@ -29,18 +27,17 @@ const useFirebase = () => {
     const location = useLocation();
     const from = location.state?.from || '/home';
 
-    const registerUsingEmail = (name, email, password) => {
+    const registerUsingEmail = (displayName, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
                 updateProfile(auth.currentUser, {
-                    displayName: name,
-                    photoURL: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1653990800/avatars/robot_nh7ris.png'
+                    displayName
                 });
                 const user = userCredential.user;
                 setUser(user);
                 navigate(from, { replace: true });
-                sweetAlert('Successfully Registered!', 'success', 'Please login using your email and password');
+                sweetAlert('Successfully Registered!', 'success', 'Please login using your email and password afterwards');
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -60,7 +57,6 @@ const useFirebase = () => {
             .catch((error) => {
                 const errorMessage = error.message;
                 sweetAlert('Login Failed', 'error', errorMessage);
-                setError(errorMessage);
             });
     }
 
@@ -99,24 +95,6 @@ const useFirebase = () => {
             }).catch((error) => {
                 const errorMessage = error.message;
                 sweetAlert('Login Failed', 'error', errorMessage);
-                setError(errorMessage);
-            });
-    }
-
-    const signInUsingGithub = () => {
-
-        const githubAuthProvider = new GithubAuthProvider();
-        signInWithPopup(auth, githubAuthProvider)
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                navigate(from, { replace: true });
-                sweetAlert('Successfully Signed In!', 'success');
-                // ...
-            }).catch((error) => {
-                const errorMessage = error.message;
-                sweetAlert('Login Failed', 'error', errorMessage);
-                setError(errorMessage);
             });
     }
 
@@ -137,11 +115,9 @@ const useFirebase = () => {
 
     return {
         user,
-        error,
         passwordReset,
         logout,
         signInUsingGoogle,
-        signInUsingGithub,
         registerUsingEmail,
         signInUsingEmail
     };

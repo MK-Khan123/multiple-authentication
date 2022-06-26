@@ -6,6 +6,7 @@ import Footer from '../Shared/Footer/Footer';
 import ProductItem from './ProductItem/ProductItem';
 
 const Home = () => {
+    document.title = 'Home';
 
     const [isLoading, setIsLoading] = useState(false);
     const [products, setProducts] = useState([]);

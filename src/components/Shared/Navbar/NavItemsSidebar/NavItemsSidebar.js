@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import { NavLink } from 'react-router-dom';
 
-const NavItemsSidebar = () => {
+const NavItemsSidebar = ({ user, logout }) => {
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const openNav = Boolean(anchorElNav);
@@ -85,11 +85,21 @@ const NavItemsSidebar = () => {
                 </NavLink>
 
                 {/* My Account Section */}
-                <NavLink to='/my-account' className='navLink-custom-style'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        MY ACCOUNT
-                    </MenuItem>
-                </NavLink>
+                {
+                    user.email ? (
+                        <NavLink to='' onClick={logout} className='navLink-custom-style'>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                LOGOUT
+                            </MenuItem>
+                        </NavLink>
+                    ) : (
+                        <NavLink to='/my-account' className='navLink-custom-style'>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                MY ACCOUNT
+                            </MenuItem>
+                        </NavLink>
+                    )
+                }
 
                 {/* Admin Section */}
                 <NavLink to='/admin' className='navLink-custom-style'>
