@@ -49,8 +49,8 @@ const MyAccount = () => {
                     </Box>
                 </Box>
 
-                <section id='user-info'>
-                    <Container>
+                <Container>
+                    <section id='user-info'>
                         <Grid container mt={4} spacing={3}>
                             <Login
                                 signInUsingEmail={signInUsingEmail}
@@ -75,10 +75,13 @@ const MyAccount = () => {
                                 </Box>
                             </Grid>
                         </Grid>
+                    </section>
 
+                    <section id='sponsors'>
                         <Sponsors />
-                    </Container>
-                </section>
+                    </section>
+                </Container>
+
             </main>
 
             <footer>

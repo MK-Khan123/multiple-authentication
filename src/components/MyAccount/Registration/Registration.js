@@ -28,7 +28,28 @@ const Registration = ({ registerUsingEmail }) => {
 
     const registration = data => {
         const { registrationName, registrationPhone, registrationEmail, registrationPassword } = data;
-        return registerUsingEmail(registrationName, registrationPhone, registrationEmail, registrationPassword);
+
+        const userData = {
+            name: registrationName,
+            phone: registrationPhone,
+            email: registrationEmail,
+            password: registrationPassword,
+            role: 'user'
+        };
+
+        const url = `http://localhost:5000/registeredUser`;
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                // sweetAlert('User registered successfully!', 'success', 'Please login for access');
+            });
+
+        return registerUsingEmail(registrationName, registrationEmail, registrationPassword);
     };
 
     return (

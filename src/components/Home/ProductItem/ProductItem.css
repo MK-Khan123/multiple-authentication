@@ -1,13 +1,13 @@
-.main-menu-card-title {
+.product-card-title {
     text-transform: uppercase;
     font-weight: 500;
     color: #642F21;
 }
 
-.main-menu-card-body:hover .main-menu-cart-button {
+.product-card-body:hover .product-cart-button {
     display: block;
 }
 
-.main-menu-cart-button {
+.product-cart-button {
     display: none;
 }

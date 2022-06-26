@@ -29,7 +29,7 @@ const Home = () => {
             </header>
 
             <main>
-                <section id='food-grid'>
+                <section id='product-grid'>
                     <Container>
                         {
                             isLoading ? (
