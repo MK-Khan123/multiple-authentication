@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import { Routes, Route, Navigate } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material';
+import MyAccount from "./components/MyAccount/MyAccount";
+import NotFound from "./components/NotFound/NotFound";
+import AuthProvider from "./contexts/AuthProvider";
 import './App.css';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Raleway',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/my-account" />} />
+
+            <Route path="/my-account" element={<MyAccount />} />
+
+            {/* <Route path="/admin" element={<AdminPanel />} /> */}
+
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </ThemeProvider>
+      </AuthProvider>
     </div>
   );
 }
