@@ -12,6 +12,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import useAuth from '../../hooks/useAuth';
+import Sponsors from '../Sponsors/Sponsors';
 import './MyAccount.css';
 
 const MyAccount = () => {
@@ -336,12 +337,14 @@ const MyAccount = () => {
                                     >
                                         OR SIGN IN USING
                                     </Typography>
-                                    <Box onClick={signInUsingGoogle}>
+                                    <Box mb={4} onClick={signInUsingGoogle}>
                                         <img className="google-icon" src={`https://i.ibb.co/2PGfmN6/google.png`} alt="" />
                                     </Box>
                                 </Box>
                             </Grid>
                         </Grid>
+
+                        <Sponsors />
                     </Container>
                 </section>
             </main>
