@@ -95,9 +95,7 @@ const MyAccount = () => {
     return (
         <section id='my-account'>
             <header>
-                <Container>
-                    <Navbar />
-                </Container>
+                <Navbar />
             </header>
 
             <main>

@@ -19,42 +19,35 @@ const Navbar = ({ cartItems }) => {
     // const { cartItems } = useReduxState();
 
     return (
-        <Box>
-            <AppBar sx={{ backgroundColor: 'whitesmoke' }}>
-                <Container>
-                    <Toolbar disableGutters>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                        >
-                            <NavLink to=''>
-                                <img style={{ maxWidth: '120px', maxHeight: '100px' }} src={logo} alt="" />
-                            </NavLink>
-                        </Typography>
+        <AppBar sx={{ backgroundColor: 'whitesmoke', position: 'static' }}>
+            <Container>
+                <Toolbar disableGutters>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                    >
+                        <NavLink to='/home'>
+                            <img style={{ maxWidth: '120px', maxHeight: '100px' }} src={logo} alt="" />
+                        </NavLink>
+                    </Typography>
 
-                        {/* NAV ITEMS for smaller screen display (smaller than width of 899px) */}
-                        <NavItemsSidebar />
+                    {/* NAV ITEMS for smaller screen display (smaller than width of 899px) */}
+                    <NavItemsSidebar />
 
-                        {/* NAV ITEMS for larger screen display (greater than width of 899px) */}
-                        <NavItems />
+                    {/* NAV ITEMS for larger screen display (greater than width of 899px) */}
+                    <NavItems />
 
-                        {/* CART ICON SECTION */}
-                        <Box sx={{ my: 3, pr: 3 }}>
-                            <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
-                                <Badge badgeContent={cartItems?.length} color="error">
-                                    <ShoppingCartIcon sx={{ fontSize: '1.5rem' }} />
-                                </Badge>
-                            </NavLink>
-                        </Box>
-
-                        {/* USER SETTINGS SECTION */}
-                        {/* <UserSettings /> */}
-                    </Toolbar>
-                </Container>
-            </AppBar>
-        </Box >
+                    {/* CART ICON SECTION */}
+                    <Box sx={{ my: 3, pr: 3 }}>
+                        <Badge badgeContent={cartItems?.length} color="error">
+                            <ShoppingCartIcon sx={{ fontSize: '1.5rem', color: '#000' }} />
+                        </Badge>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
     );
 };
 

@@ -7,7 +7,8 @@ const LoadingSpinner = () => {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                height: '100%'               
             }}
         >
             <CircularProgress sx={{ color: "#212428" }} />

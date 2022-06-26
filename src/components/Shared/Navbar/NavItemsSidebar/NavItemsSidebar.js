@@ -27,7 +27,7 @@ const NavItemsSidebar = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="secondary"
             >
                 <MenuIcon />
             </IconButton>
@@ -49,54 +49,54 @@ const NavItemsSidebar = () => {
                     display: { xs: 'block', md: 'none' }
                 }}
             >
-                {/* HOME SECTION */}
-                <NavLink to='' className='navLink-custom-style'>
+                {/* Home Section */}
+                <NavLink to='/home' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
                         HOME
                     </MenuItem>
                 </NavLink>
 
-                {/* ABOUT SECTION */}
+                {/* About Section */}
                 <NavLink to='' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
                         ABOUT
                     </MenuItem>
                 </NavLink>
 
-                {/* SHOP SECTION */}
+                {/* Shop Section */}
                 <NavLink to='' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
                         SHOP
                     </MenuItem>
                 </NavLink>
 
-                {/* PAGES SECTION */}
+                {/* Pages Section */}
                 <NavLink to='' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
                         PAGES
                     </MenuItem>
                 </NavLink>
 
-                {/* BLOG SECTION */}
+                {/* Blog Section */}
                 <NavLink to='' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
                         BLOG
                     </MenuItem>
                 </NavLink>
 
-                {/* CONTACTS SECTION */}
-                <NavLink to='' className='navLink-custom-style'>
+                {/* My Account Section */}
+                <NavLink to='/my-account' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseNavMenu}>
-                        CONTACTS
+                        MY ACCOUNT
                     </MenuItem>
                 </NavLink>
 
-                {/* ADMIN SECTION */}
-                {/* <NavLink to='/admin' className='navLink-custom-style'>
-                <MenuItem onClick={handleCloseNavMenu}>                    
-                        ADMIN                    
-                </MenuItem>
-                </NavLink> */}
+                {/* Admin Section */}
+                <NavLink to='/admin' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                        ADMIN
+                    </MenuItem>
+                </NavLink>
             </Menu>
         </Box>
     );

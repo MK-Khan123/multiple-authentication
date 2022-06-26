@@ -6,49 +6,49 @@ const NavItems = () => {
 
     return (
         <Box sx={{ flexGrow: 1, justifyContent: 'end', alignItems: 'center', display: { xs: 'none', md: 'flex' } }}>
-            {/* HOME SECTION */}
+            {/* Home Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
-                <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
+                <NavLink to='/home' style={{ textDecoration: 'none', color: 'black' }}>
                     Home
                 </NavLink>
             </Box>
 
-            {/* ABOUT SECTION */}
+            {/* About Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     About
                 </NavLink>
             </Box>
 
-            {/* SHOP SECTION */}
+            {/* Shop Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     Shop
                 </NavLink>
             </Box>
 
-            {/* PAGES SECTION */}
+            {/* Pages Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     Pages
                 </NavLink>
             </Box>
 
-            {/* BLOG SECTION */}
+            {/* Blog Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     Blog
                 </NavLink>
             </Box>
 
-            {/* CONTACTS SECTION */}
+            {/* My Account Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
-                <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
-                    Contact
+                <NavLink to='/my-account' style={{ textDecoration: 'none', color: 'black' }}>
+                    My Account
                 </NavLink>
             </Box>
 
-            {/* ADMIN SECTION */}
+            {/* Admin Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
                     Admin
