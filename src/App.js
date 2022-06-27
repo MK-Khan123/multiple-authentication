@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import RegisteredUsers from "./components/Admin/RegisteredUsers/RegisteredUsers";
 import Category from "./components/Admin/Category/Category";
 import Product from "./components/Admin/Product/Product";
+import Filtering from "./components/Admin/Filtering/Filtering";
 
 const theme = createTheme({
   typography: {
@@ -44,6 +45,8 @@ function App() {
             <Route path="/category" element={<Category />} />
 
             <Route path="/product" element={<Product />} />
+            
+            <Route path="/filter" element={<Filtering />} />
 
             <Route path='*' element={<NotFound />} />
           </Routes>

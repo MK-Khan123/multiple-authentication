@@ -8,7 +8,7 @@ const Category = () => {
 
     document.title = 'Category Upload';
 
-    //For handling Login
+    //For handling Category
     const {
         register: registerCategory,
         formState: {

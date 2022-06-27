@@ -17,6 +17,9 @@ const Sidebar = () => {
                     <NavLink className='sidebar-font' to="/product">Product Upload</NavLink>
                 </Box>
                 <Box py={1}>
+                    <NavLink className='sidebar-font' to="/filter">Filtering</NavLink>
+                </Box>
+                <Box py={1}>
                     <NavLink className='sidebar-font' to="/">Home</NavLink>
                 </Box>
             </Box>
