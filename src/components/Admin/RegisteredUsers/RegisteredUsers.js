@@ -12,6 +12,7 @@ import Paper from '@mui/material/Paper';
 import Sidebar from '../Sidebar/Sidebar';
 import sweetAlert from '../../Shared/SweetAlert/SweetAlert';
 import PageNavigation from '../PageNavigation/PageNavigation';
+import useAuth from '../../../hooks/useAuth';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -36,7 +37,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const RegisteredUsers = () => {
     document.title = 'Registered Users';
 
+    const { user } = useAuth();
+
     const [registeredUsers, setRegisteredUsers] = useState([]);
+    const [isDisabled, setIsDisabled] = useState(true);
 
     useEffect(() => {
         const url = 'http://localhost:5000/registeredUsers';
@@ -44,6 +48,12 @@ const RegisteredUsers = () => {
             .then(res => res.json())
             .then(data => setRegisteredUsers(data));
     }, [registeredUsers]);
+
+    useEffect(() => {
+        if (user?.role === 'super_admin') {
+            setIsDisabled(false);
+        } else setIsDisabled(true);
+    }, [user?.role]);
 
 
     const handleRoleUpdate = (_id, status) => {
@@ -62,8 +72,7 @@ const RegisteredUsers = () => {
             });
     }
 
-    //For pagination
-    // const [isLoading, setIsLoading] = useState(false);
+    //For pagination    
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(5);
 
@@ -90,7 +99,7 @@ const RegisteredUsers = () => {
                                 Registered Users
                             </Typography>
                             <Typography mb={3} variant="body1" gutterBottom>
-                                You can select the button to assign the role of the registered users. Super Admin button will always be disabled.
+                                Only Super Admin privilege can select the button to assign the role of the registered users.
                             </Typography>
                             <section id='user-data'>
                                 <TableContainer component={Paper}>
@@ -145,12 +154,14 @@ const RegisteredUsers = () => {
                                                                             <Chip
                                                                                 color='success'
                                                                                 label="User"
+                                                                                disabled={isDisabled}
                                                                                 onClick={() => handleRoleUpdate(_id, 'user')}
                                                                             />
                                                                             <Chip
                                                                                 color='error'
                                                                                 sx={{ marginTop: '5px' }}
                                                                                 label="Admin"
+                                                                                disabled={isDisabled}
                                                                                 onClick={() => handleRoleUpdate(_id, 'admin')}
                                                                             />
                                                                         </Box>

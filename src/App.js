@@ -3,12 +3,14 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import MyAccount from "./components/MyAccount/MyAccount";
 import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./contexts/AuthProvider";
-import './App.css';
 import Home from "./components/Home/Home";
 import RegisteredUsers from "./components/Admin/RegisteredUsers/RegisteredUsers";
 import Category from "./components/Admin/Category/Category";
 import Product from "./components/Admin/Product/Product";
 import Filtering from "./components/Admin/Filtering/Filtering";
+import ManageCategories from "./components/Admin/ManageCategories/ManageCategories";
+import ManageProducts from "./components/Admin/ManageProducts/ManageProducts";
+import './App.css';
 
 const theme = createTheme({
   typography: {
@@ -47,6 +49,10 @@ function App() {
             <Route path="/product" element={<Product />} />
             
             <Route path="/filter" element={<Filtering />} />
+
+            <Route path="/manage-products" element={<ManageProducts />} />
+
+            <Route path="/manage-categories" element={<ManageCategories />} />
 
             <Route path='*' element={<NotFound />} />
           </Routes>

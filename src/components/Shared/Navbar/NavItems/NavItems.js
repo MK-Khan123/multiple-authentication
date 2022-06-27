@@ -42,11 +42,15 @@ const NavItems = ({ user, logout }) => {
             </Box>
 
             {/* Admin Section */}
-            <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
-                <NavLink to='/registered-users' style={{ textDecoration: 'none', color: 'black' }}>
-                    Admin
-                </NavLink>
-            </Box>
+            {
+                (user?.role === 'admin' || user?.role === 'super_admin') && (
+                    <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
+                        <NavLink to='/registered-users' style={{ textDecoration: 'none', color: 'black' }}>
+                            Admin
+                        </NavLink>
+                    </Box>
+                )
+            }
 
             {/* My Account Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>

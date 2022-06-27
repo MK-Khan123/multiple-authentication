@@ -27,6 +27,20 @@ const useFirebase = () => {
     const location = useLocation();
     const from = location.state?.from || '/home';
 
+    useEffect(() => {
+        const emailId = user?.email;
+        const url = `http://localhost:5000/email/${emailId}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                const role = data[0].role;
+                const userWithRole = { ...user, role };
+                setUser(userWithRole);
+            })
+    }, [user.email]);
+
+    console.log(user);
+
     const registerUsingEmail = (displayName, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {

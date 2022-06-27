@@ -42,9 +42,6 @@ const Product = () => {
                 setIsDisabled(false);
             })
             .catch(error => console.log(error));
-
-        // const currentTime = new Date().getTime(); //This 4s delay is used so that the image gets uploaded on ImgBB and generates an URL which will be sent to MongoDB database after pressing 'Add Service'.
-        // while (currentTime + 4000 >= new Date().getTime());
     };
 
     const product = data => {
@@ -69,7 +66,7 @@ const Product = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                sweetAlert('Product added successfully!', 'success');
+                sweetAlert('Product added successfully!', 'success', 'Please go to homepage to see the update');
             });
     };
 
