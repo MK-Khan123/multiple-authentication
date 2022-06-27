@@ -39,7 +39,7 @@ const ManageCategories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/categories';
+        const url = 'https://safe-reef-91132.herokuapp.com/categories';
         fetch(url)
             .then(res => res.json())
             .then(data => setCategories(data));
@@ -48,7 +48,7 @@ const ManageCategories = () => {
 
     const handleDelete = (id) => {
 
-        const url = `http://localhost:5000/deleteCategory/${id}`;
+        const url = `https://safe-reef-91132.herokuapp.com/deleteCategory/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

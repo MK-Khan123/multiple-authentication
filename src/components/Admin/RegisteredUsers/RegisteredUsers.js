@@ -43,7 +43,7 @@ const RegisteredUsers = () => {
     const [isDisabled, setIsDisabled] = useState(true);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/registeredUsers';
+        const url = 'https://safe-reef-91132.herokuapp.com/registeredUsers';
         fetch(url)
             .then(res => res.json())
             .then(data => setRegisteredUsers(data));
@@ -59,7 +59,7 @@ const RegisteredUsers = () => {
     const handleRoleUpdate = (_id, status) => {
 
         const updatedRole = { role: status };
-        const url = `http://localhost:5000/editRole/${_id}`;
+        const url = `https://safe-reef-91132.herokuapp.com/editRole/${_id}`;
         fetch(url, {
             method: 'PATCH',
             headers: { 'Content-type': 'application/json' },

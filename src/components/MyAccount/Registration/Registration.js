@@ -37,7 +37,7 @@ const Registration = ({ registerUsingEmail }) => {
             role: 'user'
         };
 
-        const url = `http://localhost:5000/registeredUser`;
+        const url = `https://safe-reef-91132.herokuapp.com/registeredUser`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

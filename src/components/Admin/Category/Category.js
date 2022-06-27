@@ -35,7 +35,7 @@ const Category = () => {
             description: categoryDescription
         };
 
-        const url = `http://localhost:5000/category`;
+        const url = `https://safe-reef-91132.herokuapp.com/category`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

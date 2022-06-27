@@ -29,7 +29,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         const emailId = user?.email;
-        const url = `http://localhost:5000/email/${emailId}`;
+        const url = `https://safe-reef-91132.herokuapp.com/email/${emailId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

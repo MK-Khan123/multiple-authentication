@@ -57,7 +57,7 @@ const Product = () => {
             }
         };
 
-        const url = `http://localhost:5000/product`;
+        const url = `https://safe-reef-91132.herokuapp.com/product`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

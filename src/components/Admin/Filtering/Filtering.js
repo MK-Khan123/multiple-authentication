@@ -64,7 +64,7 @@ const Filtering = () => {
             email
         };
 
-        const url = `http://localhost:5000/filter`;
+        const url = `https://safe-reef-91132.herokuapp.com/filter`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

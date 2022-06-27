@@ -13,7 +13,7 @@ const Home = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        const url = `http://localhost:5000/products`;
+        const url = `https://safe-reef-91132.herokuapp.com/products`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
