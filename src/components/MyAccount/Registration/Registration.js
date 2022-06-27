@@ -45,8 +45,7 @@ const Registration = ({ registerUsingEmail }) => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-                // sweetAlert('User registered successfully!', 'success', 'Please login for access');
+                console.log(result);                
             });
 
         return registerUsingEmail(registrationName, registrationEmail, registrationPassword);
