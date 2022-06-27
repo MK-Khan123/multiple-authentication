@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Multiple Authentication
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## `Firebase Live Site Link`
 
-In the project directory, you can run:
+The project was deployed at Firebase. One can access the link by clicking here [Firebase Live Site Link](https://multiple-authentication-485d6.web.app).
 
-### `npm start`
+### `Technology Used`
+* React.js
+* Material UI
+* React Router
+* Firebase Authentication
+* Context API
+* MongoDB
+* Node.js
+* Express.js
+* React Hook Form
+* React Swiper JS
+* Axios
+* CRUD operations
+* Heroku
+* SweetAlert2
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Project Features`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. This project is basically a test for authentication with privileges. `Super Admin` has full access but `Admin` has slightly less access. General user can't access the Admin panel.
 
-### `npm test`
+2. User can register and sign in using their credentials. Form validation is completely done using React Hook Form. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. The data displayed in the homepage is fetched from MongoDB. Used route parameter to fetch data dynamically from MongoDB and displayed accordingly.
 
-### `npm run build`
+4. Exhausted CRUD operations on multiple occasions while building the website.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. In addition, used Material UI to make the website device responsive. Furthermore, I deployed the client side on Firebase which can be accessed through the above mentioned link. Server side is deployed using Heroku.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to access the server side code of this website, please [click here](https://github.com/MK-Khan123/multiple-authentication-server).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We can get in touch through [LinkedIn](https://www.linkedin.com/in/mehnaz-ahmed-khan/), [Twitter](https://twitter.com/MehnazAhmedKha1) or my email mehnazkhan231@gmail.com.
 
-### `npm run eject`
+Thank you.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Some screenshots of the project`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Home Page](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1656335735/soft-care-it/homepage_kl6noq.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![My Account](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1656335734/soft-care-it/my-account_yt2mlv.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Footer](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1656335735/soft-care-it/footer_yi1lvg.png)
 
-## Learn More
+![Admin Panel 1](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1656335735/soft-care-it/admin-panel-1_dysjla.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Admin Panel 2](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1656335735/soft-care-it/admin-panel-2_ol6jk5.png)
