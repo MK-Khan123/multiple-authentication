@@ -10,7 +10,7 @@ const ProductItem = ({ product }) => {
     const { name, description } = product;
 
     return (
-        <Grid item sm={6} md={4} lg={3} className="product-card-body">
+        <Grid item sm={6} md={4} lg={3}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <CardActionArea>
                     <Box sx={{ overflow: 'hidden' }}>
@@ -61,7 +61,7 @@ const ProductItem = ({ product }) => {
                         >
                             ৳ {description?.price}
                         </Button>
-                        <Box className="product-cart-button">
+                        <Box>
                             <Button
                                 variant='contained'
                                 sx={{

@@ -48,7 +48,6 @@ const Home = () => {
                                                 product={product}
                                             />)
                                     }
-
                                 </Grid>
                             )
                         }

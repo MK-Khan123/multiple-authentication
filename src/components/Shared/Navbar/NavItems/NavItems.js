@@ -43,7 +43,7 @@ const NavItems = ({ user, logout }) => {
 
             {/* Admin Section */}
             <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
-                <NavLink to='' style={{ textDecoration: 'none', color: 'black' }}>
+                <NavLink to='/registered-users' style={{ textDecoration: 'none', color: 'black' }}>
                     Admin
                 </NavLink>
             </Box>

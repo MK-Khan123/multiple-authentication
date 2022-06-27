@@ -5,6 +5,9 @@ import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./contexts/AuthProvider";
 import './App.css';
 import Home from "./components/Home/Home";
+import RegisteredUsers from "./components/Admin/RegisteredUsers/RegisteredUsers";
+import Category from "./components/Admin/Category/Category";
+import Product from "./components/Admin/Product/Product";
 
 const theme = createTheme({
   typography: {
@@ -36,7 +39,11 @@ function App() {
             
             <Route path="/my-account" element={<MyAccount />} />
 
-            {/* <Route path="/admin" element={<AdminPanel />} /> */}
+            <Route path="/registered-users" element={<RegisteredUsers />} />
+
+            <Route path="/category" element={<Category />} />
+
+            <Route path="/product" element={<Product />} />
 
             <Route path='*' element={<NotFound />} />
           </Routes>

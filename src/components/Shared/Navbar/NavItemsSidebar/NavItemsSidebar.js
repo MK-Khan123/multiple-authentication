@@ -84,6 +84,13 @@ const NavItemsSidebar = ({ user, logout }) => {
                     </MenuItem>
                 </NavLink>
 
+                {/* Admin Section */}
+                <NavLink to='/registered-users' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                        ADMIN
+                    </MenuItem>
+                </NavLink>
+
                 {/* My Account Section */}
                 {
                     user.email ? (
@@ -100,13 +107,6 @@ const NavItemsSidebar = ({ user, logout }) => {
                         </NavLink>
                     )
                 }
-
-                {/* Admin Section */}
-                <NavLink to='/admin' className='navLink-custom-style'>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        ADMIN
-                    </MenuItem>
-                </NavLink>
             </Menu>
         </Box>
     );
